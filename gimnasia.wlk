@@ -8,8 +8,8 @@ class Rutina {
 
     method descanso(tiempo)
 
-    method intensidad()
-    
+
+    method intensidad()   
 
 }
 
@@ -56,10 +56,8 @@ class Remo inherits Rutina{
 
     override method descanso(tiempo){
         return tiempo / 5
-    }
+    } 
 
-
- 
 }
 
 
@@ -76,7 +74,88 @@ class RemoCompetitivo inherits Remo {
     override method descanso(tiempo){
         return ((tiempo / 5)-3).max(2)
     }
-
-
    
+}
+
+
+
+
+
+class Persona {
+
+    var property peso
+
+
+    method pesoPerdido(rutina, tiempo){
+        return rutina.caloriasQuemadas(tiempo) / self.calorias()
+    }
+
+
+    method practicarRutina(rutina, tiempo){
+        self.validarAplicarARutina()
+        peso = peso - self.pesoPerdido(rutina, tiempo)
+    }
+
+
+    method validarAplicarARutina()
+
+
+    method calorias()
+
+}
+
+
+
+
+
+
+class PersonaSedentaria inherits Persona {
+
+    var property tiempo             
+
+
+    override method calorias(){
+        return 7000
+    }
+
+
+    override method validarAplicarARutina(){
+        if(peso <= 50){
+            self.error("la persona no puede practicar la rutina")
+        }
+    }   
+
+}
+
+
+
+
+
+
+class PersonaAtleta inherits Persona {
+
+
+    override method pesoPerdido(rutina, tiempo){
+        return super(rutina, tiempo) - 1
+    }
+
+
+
+    method validarGastoDeCalorias(rutina){
+        if (rutina.caloriasQuemadas(self.tiempo()) > 10000){
+            self.error("la persona no puede practicar la rutina")
+        }
+    }
+
+
+
+    override method calorias(){
+        return 8000
+    }
+
+
+    method tiempo(){
+        return 90
+    }
+
 }

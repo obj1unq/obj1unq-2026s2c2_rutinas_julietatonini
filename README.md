@@ -77,6 +77,9 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
 **Requerimientos**:
 - Saber cuánto peso perdería una persona al ejercitarse mediante una rutina
 - Que una persona aplique una rutina alterando su peso
+
+
+
  
 ### Personas sedentarias:
 
@@ -84,7 +87,7 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
 
 - El tiempo que ejercita una rutina se establece para cada persona sedentaria
 
-- solo aplican una rutina si su peso es mayor a 50
+- solo aplican una rutina si su peso es mayor a 50 
 
 **Ejemplos**
  
@@ -103,10 +106,13 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
   
  *Nota:* Todos los resultados estan truncados a 3 decimales. usar `miNumero.truncate(3)` en los tests 
 
+
+
+
+
 ### Personas atletas
 
-Las personas atletas tienen una variación en su fórmula para
-calcular el peso al practicar una rutina, porque siempre pierden
+Las personas atletas tienen una variación en su fórmula para calcular el peso al practicar una rutina, porque siempre pierden
 un kilo menos que el resto de las personas 
 
 - Formula de peso que se pierde al hacer una rutina: ` (calorias que baja la rutina / kilosPorCaloría) - 1 ` 
@@ -129,6 +135,20 @@ Al practicar las rutinas del punto anterior peso final es:
   - Remar en el delta: No se puede porque las calorías de esta rutina es menor a 10000, el peso se mantiene en 40
   - Remar en el camino de los remeros: `40 - ((12750/8000) - 1) = 39.406`
 *Nota:* Todos los resultados estan truncados a 3 decimales. usar `miNumero.truncate(3)` en los tests 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 3. Clubes
 
