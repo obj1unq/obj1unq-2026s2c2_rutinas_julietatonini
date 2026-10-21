@@ -34,6 +34,8 @@ class Running inherits Rutina{
 
 
 
+
+
 class Maraton inherits Running {
 
     override method caloriasQuemadas(tiempo){

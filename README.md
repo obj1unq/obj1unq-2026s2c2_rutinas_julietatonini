@@ -65,6 +65,7 @@ ojo, si ese valor es menor a 2, entonces es 2 (Tip: usar el método max de los n
 
 
 
+
 ## 2. Personas
 
 Las personas siguen distintas rutinas de ejercicio, y el tiempo que dedican a cada una depende del arquetipo de persona que se considere. Además, existen reglas para que la persona pueda hacer una rutina, y no siempre es posible.
