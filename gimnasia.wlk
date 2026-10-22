@@ -86,21 +86,23 @@ class Persona {
     var property peso
 
 
-    method pesoPerdido(rutina, tiempo){
-        return rutina.caloriasQuemadas(tiempo) / self.calorias()
+    method pesoPerdido(rutina){
+        return rutina.caloriasQuemadas(self.tiempo()) / self.calorias()
     }
 
 
-    method practicarRutina(rutina, tiempo){
-        self.validarAplicarARutina()
-        peso = peso - self.pesoPerdido(rutina, tiempo)
+    method practicarRutina(rutina){
+        self.validarAplicarARutina(rutina)
+        peso = peso - self.pesoPerdido(rutina)
     }
 
 
-    method validarAplicarARutina()
+    method validarAplicarARutina(rutina)
 
 
     method calorias()
+
+    method tiempo()
 
 }
 
@@ -119,7 +121,7 @@ class PersonaSedentaria inherits Persona {
     }
 
 
-    override method validarAplicarARutina(){
+    override method validarAplicarARutina(rutina){
         if(peso <= 50){
             self.error("la persona no puede practicar la rutina")
         }
@@ -135,14 +137,14 @@ class PersonaSedentaria inherits Persona {
 class PersonaAtleta inherits Persona {
 
 
-    override method pesoPerdido(rutina, tiempo){
-        return super(rutina, tiempo) - 1
+    override method pesoPerdido(rutina){
+        return super(rutina) - 1
     }
 
 
 
-    method validarGastoDeCalorias(rutina){
-        if (rutina.caloriasQuemadas(self.tiempo()) > 10000){
+    override method validarAplicarARutina(rutina){
+        if (rutina.caloriasQuemadas(self.tiempo()) < 10000){
             self.error("la persona no puede practicar la rutina")
         }
     }
@@ -154,7 +156,7 @@ class PersonaAtleta inherits Persona {
     }
 
 
-    method tiempo(){
+    override method tiempo(){
         return 90
     }
 

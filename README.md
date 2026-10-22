@@ -147,9 +147,6 @@ Al practicar las rutinas del punto anterior peso final es:
 
 
 
-
-
-
 ## 3. Clubes
 
 Un **club** tiene varios predios
