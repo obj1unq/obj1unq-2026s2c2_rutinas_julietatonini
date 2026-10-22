@@ -161,3 +161,36 @@ class PersonaAtleta inherits Persona {
     }
 
 }
+
+
+
+
+class Club {
+
+    const predios = #{}
+
+    method agregarPredio(predio){
+        predios.add(predio)
+    }
+
+
+    method elMejorPredioPara(persona){
+        return predios.max({predio => predio.caloriasQueQuemaHaciendoTodas(persona)})
+    }
+}
+
+
+
+
+class Predio {
+
+    const rutinas = #{}
+
+    method agregarRutina(rutina){
+        rutinas.add(rutina)
+    }
+
+    method caloriasQueQuemaHaciendoTodas(persona){
+        return rutinas.sum({rutina => rutina.caloriasQuemadas(persona.tiempo())})
+    }
+}

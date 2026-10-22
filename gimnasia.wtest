@@ -98,6 +98,36 @@ test "2.2.3 test atleta remo de competición" {
 
 
 
+//punto 3: Consultas
+
+const clubBarrial = new Club()
+
+const nautico = new Predio()
+
+const recreo = new Predio()
+
+
+method initialize() {
+    nautico.agregarRutina(remarEnElDelta)
+    nautico.agregarRutina(remarEnCaminoRemeros)
+    recreo.agregarRutina(correrEnLaPlaya)
+    recreo.agregarRutina(maratonBA)
+    clubBarrial.agregarPredio(nautico)
+    clubBarrial.agregarPredio(recreo)
+  }
+
+
+test "3.1 el mejor predio"{
+    assert.equals(recreo, clubBarrial.elMejorPredioPara(bob))
+    assert.equals(recreo, clubBarrial.elMejorPredioPara(calamardo))
+}
+
+
+
+
+
+
+
 
 
 
