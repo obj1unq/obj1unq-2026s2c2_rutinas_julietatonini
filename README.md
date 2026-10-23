@@ -200,7 +200,12 @@ son la maratón de buenos aires y remar en el delta.
 
 
 ## 4. Reflexión
-1. Indicar un template method en la solución. Dónde está el template y cuales son los métodos hooks. Indicar quienes implementan métodos hooks
+1. Indicar un template method en la solución. Dónde está el template y cuales son los métodos hooks. Indicar quienes implementan métodos hooks.
+
+Un template method es caloriasQuemadas(tiempo), que se encuentra en la super clase Rutina. Los métodos hook que utiliza son descanso(tiempo) e intensidad(). Running implementa descanso(tiempo), Maraton sobreescribe el template method, Remo sobreescribe ambos métodos hook y RemoCompetitivo también sobreescribe ambos métodos heredados de Remo.  
+
+
+
 2. Dibujar un diagrama estático que muestre la relación entre clubes, predios y rutinas. Se pide solo incluir los métodos polimórficos y los relacionados con el template method del punto anterior
 
 

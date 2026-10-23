@@ -11,6 +11,11 @@ class Rutina {
 
     method intensidad()   
 
+    
+    method gastaMenosDe500Cal(persona){
+        return self.caloriasQuemadas(persona.tiempo()) < 500
+    }
+
 }
 
 
@@ -177,6 +182,16 @@ class Club {
     method elMejorPredioPara(persona){
         return predios.max({predio => predio.caloriasQueQuemaHaciendoTodas(persona)})
     }
+
+    method losPrediosTranqui(persona){
+        return predios.filter({predio => predio.alMenosUnaRutinaQueLeHacenGastarMenosDe500Cal(persona)})
+    }
+
+    method lasRutinasMasExigentesPara(persona){
+        return predios.map({predio => predio.laRutinaMasExigentePara(persona)}).asSet()
+    }
+
+    // encontré este .asSet() que hace que la lista que devuelve map se transforme en un conjunto
 }
 
 
@@ -192,5 +207,14 @@ class Predio {
 
     method caloriasQueQuemaHaciendoTodas(persona){
         return rutinas.sum({rutina => rutina.caloriasQuemadas(persona.tiempo())})
+    }
+
+    method alMenosUnaRutinaQueLeHacenGastarMenosDe500Cal(persona){
+        return rutinas.any({rutina => rutina.gastaMenosDe500Cal(persona)})
+    }
+
+
+    method laRutinaMasExigentePara(persona){
+        return rutinas.max({rutina => rutina.caloriasQuemadas(persona.tiempo())})
     }
 }

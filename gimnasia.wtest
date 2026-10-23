@@ -123,16 +123,14 @@ test "3.1 el mejor predio"{
 }
 
 
+test "3.2 predios tranquis"{
+    assert.that(clubBarrial.losPrediosTranqui(bob).isEmpty())
+    assert.equals(#{recreo}, clubBarrial.losPrediosTranqui(calamardo))
+}
 
 
-
-
-
-
-
-
-
-
-
-
+test "3.3 rutinas más exigentes" {
+    assert.equals(#{maratonBA, remarEnCaminoRemeros}, clubBarrial.lasRutinasMasExigentesPara(bob))
+    assert.equals(#{maratonBA, remarEnElDelta}, clubBarrial.lasRutinasMasExigentesPara(calamardo))
+}
 }
