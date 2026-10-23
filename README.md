@@ -57,6 +57,15 @@ ojo, si ese valor es menor a 2, entonces es 2 (Tip: usar el método max de los n
 - Al practicarse por 90 minutos quemará `100 * (90 - ((90/5) - 3) ) * 1.7 = 12750`
 
 
+
+
+
+
+
+
+
+
+
 ## 2. Personas
 
 Las personas siguen distintas rutinas de ejercicio, y el tiempo que dedican a cada una depende del arquetipo de persona que se considere. Además, existen reglas para que la persona pueda hacer una rutina, y no siempre es posible.
@@ -68,6 +77,9 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
 **Requerimientos**:
 - Saber cuánto peso perdería una persona al ejercitarse mediante una rutina
 - Que una persona aplique una rutina alterando su peso
+
+
+
  
 ### Personas sedentarias:
 
@@ -75,7 +87,7 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
 
 - El tiempo que ejercita una rutina se establece para cada persona sedentaria
 
-- solo aplican una rutina si su peso es mayor a 50
+- solo aplican una rutina si su peso es mayor a 50 
 
 **Ejemplos**
  
@@ -94,10 +106,13 @@ Mientras que `calorias-consumidas` se resolvió en el punto anterior, la segunda
   
  *Nota:* Todos los resultados estan truncados a 3 decimales. usar `miNumero.truncate(3)` en los tests 
 
+
+
+
+
 ### Personas atletas
 
-Las personas atletas tienen una variación en su fórmula para
-calcular el peso al practicar una rutina, porque siempre pierden
+Las personas atletas tienen una variación en su fórmula para calcular el peso al practicar una rutina, porque siempre pierden
 un kilo menos que el resto de las personas 
 
 - Formula de peso que se pierde al hacer una rutina: ` (calorias que baja la rutina / kilosPorCaloría) - 1 ` 
@@ -121,6 +136,17 @@ Al practicar las rutinas del punto anterior peso final es:
   - Remar en el camino de los remeros: `40 - ((12750/8000) - 1) = 39.406`
 *Nota:* Todos los resultados estan truncados a 3 decimales. usar `miNumero.truncate(3)` en los tests 
 
+
+
+
+
+
+
+
+
+
+
+
 ## 3. Clubes
 
 Un **club** tiene varios predios
@@ -130,12 +156,16 @@ Se pide:
 - El mejor predio de un club para una persona: Es el predio que más calorías le 
 haría quemar a esa persona si ésta practicara todas las rutinas una vez.
 
-- Los predios tranquis de un club  para una persona: Es el conjunto de predios que tienen al menos
+- Los predios tranquis de un club para una persona: Es el conjunto de predios que tienen al menos
 una rutina que le hace gastar menos de 500 calorias a la persona
 
 - Las rutinas más exigentes del club para una persona: Es el conjunto
 formado por la rutina más exigente de cada predio para esa persona. La rutina más 
 exigente es la que más calorías le hace quemar a esa persona
+
+
+
+
 
 ** Ejemplos ** 
  
@@ -161,8 +191,21 @@ son la maratón de buenos aires y remar en el camino de los remeros.
 -para calamardo  las rutinas más exigentes del club barrial
 son la maratón de buenos aires y remar en el delta.
 
+
+
+
+
+
+
+
+
 ## 4. Reflexión
-1. Indicar un template method en la solución. Dónde está el template y cuales son los métodos hooks. Indicar quienes implementan métodos hooks
+1. Indicar un template method en la solución. Dónde está el template y cuales son los métodos hooks. Indicar quienes implementan métodos hooks.
+
+Un template method es caloriasQuemadas(tiempo), que se encuentra en la super clase Rutina. Los métodos hook que utiliza son descanso(tiempo) e intensidad(). Running implementa descanso(tiempo), Maraton sobreescribe el template method, Remo sobreescribe ambos métodos hook y RemoCompetitivo también sobreescribe ambos métodos heredados de Remo.  
+
+
+
 2. Dibujar un diagrama estático que muestre la relación entre clubes, predios y rutinas. Se pide solo incluir los métodos polimórficos y los relacionados con el template method del punto anterior
 
 
